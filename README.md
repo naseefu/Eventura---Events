@@ -32,12 +32,15 @@
 ### **Frontend**
 - **React.js**
   - Component-based architecture.
-  - GSAP for animations (if used).
 
 ### **Backend**
 - **Spring Boot**
   - REST APIs for user authentication, event management, and booking.
   - Service-oriented architecture with proper separation of concerns.
+  - Configured SecurityFilterChain to manage role-based access.
+  - Used JWT to secure API endpoints.
+  - Service classes encapsulated business logic for event and booking management.
+  - JPA Repositories for efficient database operations.
 
 ### **Database**
 - **MySQL**
@@ -59,8 +62,8 @@
 #### **Backend Setup**
 1. Clone the repository.
    ```bash
-   git clone https://github.com/yourusername/eventura.git
-   cd eventura/backend
+   git clone  https://github.com/naseefu/Eventura---Events.git
+   cd backend
    ```
 2. Configure the MySQL database in `application.properties`:
    ```properties
@@ -123,33 +126,6 @@
 
 ---
 
-## **Database Schema**
-
-### **Users**
-| Column          | Type       | Description                   |
-|------------------|------------|-------------------------------|
-| `id`            | BIGINT     | Primary key.                  |
-| `username`      | VARCHAR    | Username for authentication.  |
-| `password`      | VARCHAR    | Hashed password.              |
-| `role`          | ENUM       | User role: USER or HOST.      |
-
-### **Events**
-| Column          | Type       | Description                   |
-|------------------|------------|-------------------------------|
-| `id`            | BIGINT     | Primary key.                  |
-| `name`          | VARCHAR    | Event name.                   |
-| `description`   | TEXT       | Event details.                |
-| `host_id`       | BIGINT     | Host's user ID.               |
-
-### **Bookings**
-| Column          | Type       | Description                   |
-|------------------|------------|-------------------------------|
-| `id`            | BIGINT     | Primary key.                  |
-| `event_id`      | BIGINT     | Event ID.                     |
-| `user_id`       | BIGINT     | User ID.                      |
-
----
-
 ## **Project Highlights**
 - Implements **RBAC** for different user functionalities.
 - Integrates payment flow with seat management.
@@ -168,6 +144,3 @@
 Contributions are welcome! Feel free to fork the project and submit pull requests.
 
 ---
-
-## **License**
-This project is licensed under the [MIT License](LICENSE).
